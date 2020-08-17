@@ -1,0 +1,263 @@
+<?php
+
+use Illuminate\Http\Request;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+
+Route::name('contactus')->post('contactus', 'LandingAPIController@contactUs');
+Route::name('newsletter')->post('newsletter', 'LandingAPIController@newsLetter');
+
+Route::name('list.presentation')->get('list/presentation', function(){
+	$data = array([
+								'id' 		=> 1,
+	              'name' 	=> 'DELIVERY'
+	            ],
+	            [
+	              'id'		=> 2,
+	              'name' 	=> 'STORE'
+	            ]);
+
+  return response()->json([
+  				'data'=>$data, 'Message',
+  				'Products retrieved successfully',
+  				'status'=>200
+  			]);
+});
+
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::get('admin/activity_category_translations', 'Admin\ActivityCategoryTranslationAPIController@index');
+Route::post('admin/activity_category_translations', 'Admin\ActivityCategoryTranslationAPIController@store');
+Route::get('admin/activity_category_translations/{activity_category_translations}', 'Admin\ActivityCategoryTranslationAPIController@show');
+Route::put('admin/activity_category_translations/{activity_category_translations}', 'Admin\ActivityCategoryTranslationAPIController@update');
+Route::patch('admin/activity_category_translations/{activity_category_translations}', 'Admin\ActivityCategoryTranslationAPIController@update');
+Route::delete('admin/activity_category_translations/{activity_category_translations}', 'Admin\ActivityCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/activity_translations', 'Admin\ActivityTranslationAPIController@index');
+Route::post('admin/activity_translations', 'Admin\ActivityTranslationAPIController@store');
+Route::get('admin/activity_translations/{activity_translations}', 'Admin\ActivityTranslationAPIController@show');
+Route::put('admin/activity_translations/{activity_translations}', 'Admin\ActivityTranslationAPIController@update');
+Route::patch('admin/activity_translations/{activity_translations}', 'Admin\ActivityTranslationAPIController@update');
+Route::delete('admin/activity_translations/{activity_translations}', 'Admin\ActivityTranslationAPIController@destroy');
+
+
+Route::get('admin/blog_category_translations', 'Admin\BlogCategoryTranslationAPIController@index');
+Route::post('admin/blog_category_translations', 'Admin\BlogCategoryTranslationAPIController@store');
+Route::get('admin/blog_category_translations/{blog_category_translations}', 'Admin\BlogCategoryTranslationAPIController@show');
+Route::put('admin/blog_category_translations/{blog_category_translations}', 'Admin\BlogCategoryTranslationAPIController@update');
+Route::patch('admin/blog_category_translations/{blog_category_translations}', 'Admin\BlogCategoryTranslationAPIController@update');
+Route::delete('admin/blog_category_translations/{blog_category_translations}', 'Admin\BlogCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/blog_translations', 'Admin\BlogTranslationAPIController@index');
+Route::post('admin/blog_translations', 'Admin\BlogTranslationAPIController@store');
+Route::get('admin/blog_translations/{blog_translations}', 'Admin\BlogTranslationAPIController@show');
+Route::put('admin/blog_translations/{blog_translations}', 'Admin\BlogTranslationAPIController@update');
+Route::patch('admin/blog_translations/{blog_translations}', 'Admin\BlogTranslationAPIController@update');
+Route::delete('admin/blog_translations/{blog_translations}', 'Admin\BlogTranslationAPIController@destroy');
+
+
+Route::get('admin/product_category_translations', 'Admin\ProductCategoryTranslationAPIController@index');
+Route::post('admin/product_category_translations', 'Admin\ProductCategoryTranslationAPIController@store');
+Route::get('admin/product_category_translations/{product_category_translations}', 'Admin\ProductCategoryTranslationAPIController@show');
+Route::put('admin/product_category_translations/{product_category_translations}', 'Admin\ProductCategoryTranslationAPIController@update');
+Route::patch('admin/product_category_translations/{product_category_translations}', 'Admin\ProductCategoryTranslationAPIController@update');
+Route::delete('admin/product_category_translations/{product_category_translations}', 'Admin\ProductCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/product_subcategory_translations', 'Admin\ProductSubcategoryTranslationAPIController@index');
+Route::post('admin/product_subcategory_translations', 'Admin\ProductSubcategoryTranslationAPIController@store');
+Route::get('admin/product_subcategory_translations/{product_subcategory_translations}', 'Admin\ProductSubcategoryTranslationAPIController@show');
+Route::put('admin/product_subcategory_translations/{product_subcategory_translations}', 'Admin\ProductSubcategoryTranslationAPIController@update');
+Route::patch('admin/product_subcategory_translations/{product_subcategory_translations}', 'Admin\ProductSubcategoryTranslationAPIController@update');
+Route::delete('admin/product_subcategory_translations/{product_subcategory_translations}', 'Admin\ProductSubcategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/brand_translations', 'Admin\BrandTranslationAPIController@index');
+Route::post('admin/brand_translations', 'Admin\BrandTranslationAPIController@store');
+Route::get('admin/brand_translations/{brand_translations}', 'Admin\BrandTranslationAPIController@show');
+Route::put('admin/brand_translations/{brand_translations}', 'Admin\BrandTranslationAPIController@update');
+Route::patch('admin/brand_translations/{brand_translations}', 'Admin\BrandTranslationAPIController@update');
+Route::delete('admin/brand_translations/{brand_translations}', 'Admin\BrandTranslationAPIController@destroy');
+
+
+Route::get('products', 'Admin\ProductTranslationAPIController@index');
+Route::post('products', 'Admin\ProductTranslationAPIController@store');
+Route::get('products/{product}', 'Admin\ProductTranslationAPIController@show');
+Route::put('products/{product}', 'Admin\ProductTranslationAPIController@update');
+Route::patch('products/{product}', 'Admin\ProductTranslationAPIController@update');
+Route::delete('products/{product}', 'Admin\ProductTranslationAPIController@destroy');
+
+
+Route::get('admin/product_presentation_t', 'Admin\ProductPresentationTranslationAPIController@index');
+Route::post('admin/product_presentation_t', 'Admin\ProductPresentationTranslationAPIController@store');
+Route::get('admin/product_presentation_t/{product_presentation_t}', 'Admin\ProductPresentationTranslationAPIController@show');
+Route::put('admin/product_presentation_t/{product_presentation_t}', 'Admin\ProductPresentationTranslationAPIController@update');
+Route::patch('admin/product_presentation_t/{product_presentation_t}', 'Admin\ProductPresentationTranslationAPIController@update');
+Route::delete('admin/product_presentation_t/{product_presentation_t}', 'Admin\ProductPresentationTranslationAPIController@destroy');
+
+
+Route::get('admin/orders', 'Admin\OrderAPIController@index');
+Route::post('admin/orders', 'Admin\OrderAPIController@store');
+Route::get('admin/orders/{orders}', 'Admin\OrderAPIController@show');
+Route::put('admin/orders/{orders}', 'Admin\OrderAPIController@update');
+Route::patch('admin/orders/{orders}', 'Admin\OrderAPIController@update');
+Route::delete('admin/orders/{orders}', 'Admin\OrderAPIController@destroy');
+
+
+Route::get('admin/order_details', 'Admin\OrderDetailAPIController@index');
+Route::post('admin/order_details', 'Admin\OrderDetailAPIController@store');
+Route::get('admin/order_details/{order_details}', 'Admin\OrderDetailAPIController@show');
+Route::put('admin/order_details/{order_details}', 'Admin\OrderDetailAPIController@update');
+Route::patch('admin/order_details/{order_details}', 'Admin\OrderDetailAPIController@update');
+Route::delete('admin/order_details/{order_details}', 'Admin\OrderDetailAPIController@destroy');
+
+
+Route::get('admin/room_category_translations', 'Admin\RoomCategoryTranslationAPIController@index');
+Route::post('admin/room_category_translations', 'Admin\RoomCategoryTranslationAPIController@store');
+Route::get('admin/room_category_translations/{room_category_translations}', 'Admin\RoomCategoryTranslationAPIController@show');
+Route::put('admin/room_category_translations/{room_category_translations}', 'Admin\RoomCategoryTranslationAPIController@update');
+Route::patch('admin/room_category_translations/{room_category_translations}', 'Admin\RoomCategoryTranslationAPIController@update');
+Route::delete('admin/room_category_translations/{room_category_translations}', 'Admin\RoomCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/room_translations', 'Admin\RoomTranslationAPIController@index');
+Route::post('admin/room_translations', 'Admin\RoomTranslationAPIController@store');
+Route::get('admin/room_translations/{room_translations}', 'Admin\RoomTranslationAPIController@show');
+Route::put('admin/room_translations/{room_translations}', 'Admin\RoomTranslationAPIController@update');
+Route::patch('admin/room_translations/{room_translations}', 'Admin\RoomTranslationAPIController@update');
+Route::delete('admin/room_translations/{room_translations}', 'Admin\RoomTranslationAPIController@destroy');
+
+
+Route::get('admin/room_season_translations', 'Admin\RoomSeasonTranslationAPIController@index');
+Route::post('admin/room_season_translations', 'Admin\RoomSeasonTranslationAPIController@store');
+Route::get('admin/room_season_translations/{room_season_translations}', 'Admin\RoomSeasonTranslationAPIController@show');
+Route::put('admin/room_season_translations/{room_season_translations}', 'Admin\RoomSeasonTranslationAPIController@update');
+Route::patch('admin/room_season_translations/{room_season_translations}', 'Admin\RoomSeasonTranslationAPIController@update');
+Route::delete('admin/room_season_translations/{room_season_translations}', 'Admin\RoomSeasonTranslationAPIController@destroy');
+
+
+Route::get('admin/service_category_translations', 'Admin\ServiceCategoryTranslationAPIController@index');
+Route::post('admin/service_category_translations', 'Admin\ServiceCategoryTranslationAPIController@store');
+Route::get('admin/service_category_translations/{service_category_translations}', 'Admin\ServiceCategoryTranslationAPIController@show');
+Route::put('admin/service_category_translations/{service_category_translations}', 'Admin\ServiceCategoryTranslationAPIController@update');
+Route::patch('admin/service_category_translations/{service_category_translations}', 'Admin\ServiceCategoryTranslationAPIController@update');
+Route::delete('admin/service_category_translations/{service_category_translations}', 'Admin\ServiceCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/service_translations', 'Admin\ServiceTranslationAPIController@index');
+Route::post('admin/service_translations', 'Admin\ServiceTranslationAPIController@store');
+Route::get('admin/service_translations/{service_translations}', 'Admin\ServiceTranslationAPIController@show');
+Route::put('admin/service_translations/{service_translations}', 'Admin\ServiceTranslationAPIController@update');
+Route::patch('admin/service_translations/{service_translations}', 'Admin\ServiceTranslationAPIController@update');
+Route::delete('admin/service_translations/{service_translations}', 'Admin\ServiceTranslationAPIController@destroy');
+
+
+Route::get('admin/event_category_translations', 'Admin\EventCategoryTranslationAPIController@index');
+Route::post('admin/event_category_translations', 'Admin\EventCategoryTranslationAPIController@store');
+Route::get('admin/event_category_translations/{event_category_translations}', 'Admin\EventCategoryTranslationAPIController@show');
+Route::put('admin/event_category_translations/{event_category_translations}', 'Admin\EventCategoryTranslationAPIController@update');
+Route::patch('admin/event_category_translations/{event_category_translations}', 'Admin\EventCategoryTranslationAPIController@update');
+Route::delete('admin/event_category_translations/{event_category_translations}', 'Admin\EventCategoryTranslationAPIController@destroy');
+
+
+Route::get('admin/event_translations', 'Admin\EventTranslationAPIController@index');
+Route::post('admin/event_translations', 'Admin\EventTranslationAPIController@store');
+Route::get('admin/event_translations/{event_translations}', 'Admin\EventTranslationAPIController@show');
+Route::put('admin/event_translations/{event_translations}', 'Admin\EventTranslationAPIController@update');
+Route::patch('admin/event_translations/{event_translations}', 'Admin\EventTranslationAPIController@update');
+Route::delete('admin/event_translations/{event_translations}', 'Admin\EventTranslationAPIController@destroy');
+
+
+Route::get('admin/rols', 'Admin\RolAPIController@index');
+Route::post('admin/rols', 'Admin\RolAPIController@store');
+Route::get('admin/rols/{rols}', 'Admin\RolAPIController@show');
+Route::put('admin/rols/{rols}', 'Admin\RolAPIController@update');
+Route::patch('admin/rols/{rols}', 'Admin\RolAPIController@update');
+Route::delete('admin/rols/{rols}', 'Admin\RolAPIController@destroy');
+
+
+Route::get('admin/bookings', 'Admin\BookingAPIController@index');
+Route::post('admin/bookings', 'Admin\BookingAPIController@store');
+Route::get('admin/bookings/{bookings}', 'Admin\BookingAPIController@show');
+Route::put('admin/bookings/{bookings}', 'Admin\BookingAPIController@update');
+Route::patch('admin/bookings/{bookings}', 'Admin\BookingAPIController@update');
+Route::delete('admin/bookings/{bookings}', 'Admin\BookingAPIController@destroy');
+
+
+Route::get('admin/booking_details', 'Admin\BookingDetailAPIController@index');
+Route::post('admin/booking_details', 'Admin\BookingDetailAPIController@store');
+Route::get('admin/booking_details/{booking_details}', 'Admin\BookingDetailAPIController@show');
+Route::put('admin/booking_details/{booking_details}', 'Admin\BookingDetailAPIController@update');
+Route::patch('admin/booking_details/{booking_details}', 'Admin\BookingDetailAPIController@update');
+Route::delete('admin/booking_details/{booking_details}', 'Admin\BookingDetailAPIController@destroy');
+
+
+Route::get('admin/newsletter_users', 'Admin\NewsletterUserAPIController@index');
+Route::post('admin/newsletter_users', 'Admin\NewsletterUserAPIController@store');
+Route::get('admin/newsletter_users/{newsletter_users}', 'Admin\NewsletterUserAPIController@show');
+Route::put('admin/newsletter_users/{newsletter_users}', 'Admin\NewsletterUserAPIController@update');
+Route::patch('admin/newsletter_users/{newsletter_users}', 'Admin\NewsletterUserAPIController@update');
+Route::delete('admin/newsletter_users/{newsletter_users}', 'Admin\NewsletterUserAPIController@destroy');
+
+
+Route::get('admin/multimedia', 'Admin\MultimediaAPIController@index');
+Route::post('admin/multimedia', 'Admin\MultimediaAPIController@store');
+Route::get('admin/multimedia/{multimedia}', 'Admin\MultimediaAPIController@show');
+Route::put('admin/multimedia/{multimedia}', 'Admin\MultimediaAPIController@update');
+Route::patch('admin/multimedia/{multimedia}', 'Admin\MultimediaAPIController@update');
+Route::delete('admin/multimedia/{multimedia}', 'Admin\MultimediaAPIController@destroy');
+
+
+Route::get('admin/seo_translations', 'Admin\SeoTranslationAPIController@index');
+Route::post('admin/seo_translations', 'Admin\SeoTranslationAPIController@store');
+Route::get('admin/seo_translations/{seo_translations}', 'Admin\SeoTranslationAPIController@show');
+Route::put('admin/seo_translations/{seo_translations}', 'Admin\SeoTranslationAPIController@update');
+Route::patch('admin/seo_translations/{seo_translations}', 'Admin\SeoTranslationAPIController@update');
+Route::delete('admin/seo_translations/{seo_translations}', 'Admin\SeoTranslationAPIController@destroy');
+
+
+Route::get('admin/tag_translations', 'Admin\TagTranslationAPIController@index');
+Route::post('admin/tag_translations', 'Admin\TagTranslationAPIController@store');
+Route::get('admin/tag_translations/{tag_translations}', 'Admin\TagTranslationAPIController@show');
+Route::put('admin/tag_translations/{tag_translations}', 'Admin\TagTranslationAPIController@update');
+Route::patch('admin/tag_translations/{tag_translations}', 'Admin\TagTranslationAPIController@update');
+Route::delete('admin/tag_translations/{tag_translations}', 'Admin\TagTranslationAPIController@destroy');
+
+
+Route::get('admin/product_presentation_products', 'Admin\ProductPresentationProductAPIController@index');
+Route::post('admin/product_presentation_products', 'Admin\ProductPresentationProductAPIController@store');
+Route::get('admin/product_presentation_products/{product_presentation_products}', 'Admin\ProductPresentationProductAPIController@show');
+Route::put('admin/product_presentation_products/{product_presentation_products}', 'Admin\ProductPresentationProductAPIController@update');
+Route::patch('admin/product_presentation_products/{product_presentation_products}', 'Admin\ProductPresentationProductAPIController@update');
+Route::delete('admin/product_presentation_products/{product_presentation_products}', 'Admin\ProductPresentationProductAPIController@destroy');
+
+
+Route::get('admin/roles', 'Admin\RoleAPIController@index');
+Route::post('admin/roles', 'Admin\RoleAPIController@store');
+Route::get('admin/roles/{roles}', 'Admin\RoleAPIController@show');
+Route::put('admin/roles/{roles}', 'Admin\RoleAPIController@update');
+Route::patch('admin/roles/{roles}', 'Admin\RoleAPIController@update');
+Route::delete('admin/roles/{roles}', 'Admin\RoleAPIController@destroy');
+
+
+Route::get('admin/requests', 'Admin\RequestAPIController@index');
+Route::post('admin/requests', 'Admin\RequestAPIController@store');
+Route::get('admin/requests/{requests}', 'Admin\RequestAPIController@show');
+Route::put('admin/requests/{requests}', 'Admin\RequestAPIController@update');
+Route::patch('admin/requests/{requests}', 'Admin\RequestAPIController@update');
+Route::delete('admin/requests/{requests}', 'Admin\RequestAPIController@destroy');

@@ -1,0 +1,83 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 07/07/2018 05:44
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-back:before { content: "\f100"; }
+.flaticon-cake-slice:before { content: "\f101"; }
+.flaticon-menu:before { content: "\f102"; }
+.flaticon-whatsapp:before { content: "\f103"; }
+.flaticon-whatsapp-logo:before { content: "\f104"; }
+.flaticon-sandwich:before { content: "\f105"; }
+.flaticon-food:before { content: "\f106"; }
+.flaticon-chicken:before { content: "\f107"; }
+.flaticon-breakfast:before { content: "\f108"; }
+.flaticon-bake:before { content: "\f109"; }
+.flaticon-dessert-1:before { content: "\f10a"; }
+.flaticon-dessert:before { content: "\f10b"; }
+.flaticon-salad-1:before { content: "\f10c"; }
+.flaticon-lemonade:before { content: "\f10d"; }
+.flaticon-beer:before { content: "\f10e"; }
+.flaticon-meat:before { content: "\f10f"; }
+.flaticon-salad:before { content: "\f110"; }
+.flaticon-pizza:before { content: "\f111"; }
+.flaticon-phone-call:before { content: "\f112"; }
+.flaticon-alarm:before { content: "\f113"; }
+.flaticon-list:before { content: "\f114"; }
+.flaticon-placeholder:before { content: "\f115"; }
+    
+    $font-Flaticon-back: "\f100";
+    $font-Flaticon-cake-slice: "\f101";
+    $font-Flaticon-menu: "\f102";
+    $font-Flaticon-whatsapp: "\f103";
+    $font-Flaticon-whatsapp-logo: "\f104";
+    $font-Flaticon-sandwich: "\f105";
+    $font-Flaticon-food: "\f106";
+    $font-Flaticon-chicken: "\f107";
+    $font-Flaticon-breakfast: "\f108";
+    $font-Flaticon-bake: "\f109";
+    $font-Flaticon-dessert-1: "\f10a";
+    $font-Flaticon-dessert: "\f10b";
+    $font-Flaticon-salad-1: "\f10c";
+    $font-Flaticon-lemonade: "\f10d";
+    $font-Flaticon-beer: "\f10e";
+    $font-Flaticon-meat: "\f10f";
+    $font-Flaticon-salad: "\f110";
+    $font-Flaticon-pizza: "\f111";
+    $font-Flaticon-phone-call: "\f112";
+    $font-Flaticon-alarm: "\f113";
+    $font-Flaticon-list: "\f114";
+    $font-Flaticon-placeholder: "\f115";

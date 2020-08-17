@@ -1,0 +1,10 @@
+<template>
+    <section>
+      <navheader></navheader>
+      <category></category>
+      <vitrina></vitrina>
+      <topproduct></topproduct>
+      <ourgallery></ourgallery>
+      <channel></channel>
+    </section>
+</template>
